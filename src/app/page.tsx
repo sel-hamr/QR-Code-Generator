@@ -28,8 +28,8 @@ export default function Home() {
   };
   const disableButton = url === "" || size === "";
   return (
-    <main className="flex  flex-col items-center  md:justify-between justify-center container md:mt-24 mt-8">
-      <Card className="w-full max-w-sm">
+    <main className="flex  flex-col items-center  md:justify-between justify-center md:container md:mt-24 mt-8">
+      <Card className="w-full max-w-sm mx-auto border-[0px] md:border">
         <CardHeader>
           <CardTitle className="text-2xl">QR Code Generator</CardTitle>
           <CardDescription>
