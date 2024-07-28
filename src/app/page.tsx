@@ -28,18 +28,17 @@ export default function Home() {
   };
   const disableButton = url === "" || size === "";
   return (
-    <main className="flex min-h-screen flex-col items-center  md:justify-between justify-center container md:mt-24 ">
+    <main className="flex  flex-col items-center  md:justify-between justify-center container md:mt-24 mt-8">
       <Card className="w-full max-w-sm">
         <CardHeader>
           <CardTitle className="text-2xl">QR Code Generator</CardTitle>
           <CardDescription>
-            Generate QR Codes effortlessly with our intuitive interface. Access
-            a free plan that never expires! Customize your QR Codes
+            Generate QR Codes effortlessly with our intuitive interface.
           </CardDescription>
         </CardHeader>
         <CardContent className="grid gap-4">
           <div className="grid gap-2">
-            <Label htmlFor="email">Url</Label>
+            <Label htmlFor="url">url</Label>
             <Input
               id="url"
               type="text"
@@ -50,7 +49,7 @@ export default function Home() {
             />
           </div>
           <div className="grid gap-2">
-            <Label htmlFor="password">size</Label>
+            <Label>size</Label>
             <SelectSize setSize={setSize} />
           </div>
         </CardContent>
