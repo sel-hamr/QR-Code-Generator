@@ -9,8 +9,8 @@ import { MobileNav } from "./mobile-nav";
 
 export const Navbar = () => {
   return (
-    <div className="container py-3 max-w-screen-lg">
-      <div className="flex items-center justify-between gap-4">
+    <div className="container py-4 max-w-screen-xl px-4 md:px-8">
+      <div className="flex items-center justify-between gap-6">
         <Logo />
         <MainNav />
         <div className="flex items-center gap-2">
@@ -19,20 +19,20 @@ export const Navbar = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <Icons.gitHub className="size-6 md:size-5 fill-current" />
+            <Icons.gitHub className="size-7 md:size-8 fill-current" />
           </Link>
           <Link
             href="https://www.linkedin.com/in/soufiane-elhamri/"
             target="_blank"
             rel="noreferrer"
           >
-            <Icons.linkedIn className="size-6 md:size-5 fill-current" />
+            <Icons.linkedIn className="size-7 md:size-8 fill-current" />
           </Link>
           <ModeToggle />
           <MobileNav />
         </div>
       </div>
-      <Separator className="my-2" />
+      <Separator className="my-3 hidden md:block" />
     </div>
   );
 };

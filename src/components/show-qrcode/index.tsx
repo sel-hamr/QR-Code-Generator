@@ -12,6 +12,7 @@ import {
 import { downloadQRCode } from "@/lib/utils";
 import { toast } from "sonner";
 import { CopyClipboard } from "../copy-clipboard";
+import { ColorPiker } from "../color-picker";
 
 type ShowQRcodeProps = {
   QRcode: {
@@ -20,12 +21,14 @@ type ShowQRcodeProps = {
   };
   generateQRCode: () => void;
   disableButton?: boolean;
+  setColor: (color: string) => void;
 };
 
 export const ShowQRcode = ({
   QRcode,
   generateQRCode,
   disableButton,
+  setColor,
 }: ShowQRcodeProps) => {
   const handleDownloadCode = () => {
     downloadQRCode(QRcode.img);
@@ -58,15 +61,7 @@ export const ShowQRcode = ({
             Download QR Code
           </Button>
           <CopyClipboard text={QRcode.svg} />
-          <DialogClose asChild>
-            <Button
-              type="button"
-              variant="secondary"
-              className="hidden md:block"
-            >
-              Close
-            </Button>
-          </DialogClose>
+          <ColorPiker setColor={setColor} />
         </DialogFooter>
       </DialogContent>
     </Dialog>

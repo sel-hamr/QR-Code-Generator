@@ -1,6 +1,6 @@
 # QR Code Generator
 
-This project is a QR Code Generator built with React and TypeScript. It allows users to generate and download QR codes in multiple sizes for URLs and copy them to the clipboard.
+This project is a QR Code Generator built with React and TypeScript. It allows users to generate and download QR codes in multiple sizes with custom colors. Users can also copy the generated QR code to the clipboard.
 
 ## Table of Contents
 
@@ -43,6 +43,7 @@ This project is a QR Code Generator built with React and TypeScript. It allows u
 3. Select the size of the QR code.
 4. Click the "Generate QR Code" button.
 5. Download the generated QR code or copy it to the clipboard.
+6. Change the color of the QR code by clicking the color picker.
 
 ## Contributing
 

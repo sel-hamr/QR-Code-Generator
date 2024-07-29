@@ -11,25 +11,17 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { generateQRCodeImg, generateQRCodeSVG } from "@/lib/utils";
+import { useGenerateQRCode } from "@/lib/hooks";
 import React from "react";
 
 export default function Home() {
-  const [url, setUrl] = React.useState("");
-  const [size, setSize] = React.useState("");
-  const [qrCode, setQrCode] = React.useState({
-    img: "",
-    svg: "",
-  });
-  const generateQRCode = async () => {
-    const QRCode = await generateQRCodeImg(url, parseInt(size));
-    const QRCodeSVG = await generateQRCodeSVG(url, parseInt(size));
-    setQrCode({ img: QRCode, svg: QRCodeSVG });
-  };
+  const { url, setUrl, size, setSize, setColor, qrCode, generateQRCode } =
+    useGenerateQRCode();
+
   const disableButton = url === "" || size === "";
   return (
     <main className="flex  flex-col items-center  md:justify-between justify-center md:container md:mt-24 mt-8">
-      <Card className="w-full max-w-sm mx-auto border-[0px] md:border">
+      <Card className="w-full max-w-sm mx-auto border-[0px] md:border ">
         <CardHeader>
           <CardTitle className="text-2xl">QR Code Generator</CardTitle>
           <CardDescription>
@@ -58,6 +50,7 @@ export default function Home() {
             QRcode={qrCode}
             generateQRCode={generateQRCode}
             disableButton={disableButton}
+            setColor={setColor}
           />
         </CardFooter>
       </Card>

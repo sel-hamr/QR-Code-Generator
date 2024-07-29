@@ -15,7 +15,7 @@ export const MobileNav = () => {
     <Sheet>
       <SheetTrigger asChild>
         <Button variant="link" className="block md:hidden p-0">
-          <Icons.menu className="size-6" />
+          <Icons.menu className="size-7" />
         </Button>
       </SheetTrigger>
       <SheetContent>

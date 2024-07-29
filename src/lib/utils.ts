@@ -6,23 +6,39 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export async function generateQRCodeImg(url: string, size: number) {
+export async function generateQRCodeImg(
+  url: string,
+  size: number,
+  color: string | undefined = "#000000"
+) {
   return await QRCode.toDataURL(url, {
     width: size,
     margin: 2,
     type: "image/png",
     version: 2,
     maskPattern: 7,
+    color: {
+      dark: color,
+      light: "#ffffff",
+    },
   });
 }
 
-export async function generateQRCodeSVG(url: string, size: number) {
+export async function generateQRCodeSVG(
+  url: string,
+  size: number,
+  color: string | undefined = "#000000"
+) {
   return await QRCode.toString(url, {
     width: size,
     margin: 2,
     type: "svg",
     version: 2,
     maskPattern: 7,
+    color: {
+      dark: color,
+      light: "#ffffff",
+    },
   });
 }
 
